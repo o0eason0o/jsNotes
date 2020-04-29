@@ -118,7 +118,7 @@ let leo;
 // before ES6
 function Animal(name, energy) {
     this.name = name;
-    this.energy = energy; ßß
+    this.energy = energy;
 }
 Animal.prototype.eat = function (amount) {
     console.log(`${this.name} is eating.`);
