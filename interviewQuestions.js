@@ -2,6 +2,8 @@
 
 
 let server = import 'axios'
+import { cachedDataVersionTag } from 'v8';
+import { pipeline } from 'stream';
 
 axios.get('http://').then((res)=>{return res.data});
 
@@ -193,6 +195,162 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
 
+
+// chase (vendor)
+tell me about your past experience
+what did you do when you were with chase
+which version of angular do you use and what did you do
+tell me about the frameworks. blueJs, angular, react
+how do components talk to each other
+design this: an app with login and a dashboard with data and graph
+where do you store user info? how about log in info?
+what is interface 
+what is pipe 
+what is ng material
+how does child and parents components talk to each other
+whats emitter, how do you use it
+if your teammate come to you and say theres a better solution. what would you do
+tell me about you lead expereince 
+
+
+
+// apple vendor
+
+
+
+function test (input){
+
+    let result;
+    
+    fetch('address').then((res)=>{
+      result = res.json();
+    }).catch((rej)=>{
+      
+    });
+  
+    
+    
+    //   do something with the input
+    
+    
+    
+    
+    return result;
+  }
+  
+  
+  
+  
+  let answer = new Promise(),
+      x = 3;
+  
+  async function yourName (){
+    Promise.resolve('name');
+  }
+  
+  let result2 = await yourName();
+  
+  
+  
+  
+  function test3 (){
+    let y = 10,
+        parsedData;
+    
+    
+    function test4(){
+      //     modify your parsedData
+      return 100 - y;
+    }
+    
+    
+    
+  
+  }
+  
+  
+  test3();
+  // 3
+  
+  
+  (function() {
+      console.log(5); 
+      setTimeout(function(){console.log(6)}, 1000); 
+      setTimeout(function(){console.log(1)}, 0); 
+      console.log(4);
+  })();
+  
+  // 5 , 4 , 1, 6
+  
+  
+  
+  var example = {
+      _name: ‘XXX',
+      getProg: function (){
+          return this._name;
+      }
+  };
+  
+  var Identity = example.getProg;
+  console.log(Identity()); // XXX
+  console.log(getProg()); //error
+  console.log(example.getProg()); // XXX
+  
+  
+  var example2 = {_name: 'YYY'}
+  example.getProg.bind(example2);
+  
+  
+  //route to /demo
+  var app=express();
+  app.get('/demo', (req, res) => {
+  
+  //   do something with your req
+    
+    return res.resonpse();
+  
+  });
+  
+  app.use('/demo',router);
+  router.route('/url')  
+  
+  
+  $.post
+  axios.get('')
+  fetch('youraddress') // get
+  fetch('youraddress', {
+    method:'POST',
+    body: body,
+    'contenttype'
+  });
+  
+  rxjs
+  redux.js
+  stream
+  
+  observables.subscribe((event)=>{
+    console.log(event.mouse.x);
+    console.log(event.mouse.y);
+  });
+  
+  window.initialstate
+  -node {
+    
+   example:[example1,example2....];
+   program: {;;;}
+    number: 3;
+  }
+  
+  component
+  this.example[0];
+  
+  injection?
+    
+  class component name4 {
+    constructor ( yourServiceName ){
+      this.myService = yourServiceName;
+    }
+  }  
 
 
 
