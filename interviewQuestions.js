@@ -292,7 +292,9 @@ function test (input){
   };
   
   var Identity = example.getProg;
-  console.log(Identity()); // XXX
+  console.log(Identity()); // ""
+  // to show 'XXX'
+  Identity.bind(exapmle)(); // 'XXX'
   console.log(getProg()); //error
   console.log(example.getProg()); // XXX
   
@@ -354,8 +356,101 @@ function test (input){
 
 
 
+// apple interview
+
+/**
+ * George is a grocery store manager. He is trying re-stock the store inventory.
+ * He keeps his optimum inventory in demandInventory Object.
+ * He have his current inventory level in currentInventory Object.
+ * He needs your help to figure out what he should be ordering to keep his store inventory to optimum.
+ * Complete the order() function so that George can calculate the what he needs order from supplier.
+ */
+
+/**
+ * Optimum item inventory George always tries to keep in stock
+ * @type {Array.<Object>}
+ */
+let demandInventory = [
+    { "item": "apples", "quantity": 5},
+    { "item": "oranges", "quantity": 8},
+    { "item": "carrots", "quantity": 2},
+    { "item": "mango", "quantity": 10},
+    { "item": "brocoli", "quantity": 15},
+    { "item": "lemon", "quantity": 3},
+    { "item": "chillipowder", "quantity": 2},
+    { "item": "onions", "quantity": 5},
+    { "item": "ketchup", "quantity": 8}
+];
+
+/**
+ * Current item inventory George have in stock
+ * @type {Array.<Object>}
+ */
+let currentInventory = [
+    { "item": "apples", "quantity": 3},
+    { "item": "oranges", "quantity": 2},
+    { "item": "carrots", "quantity": 5},
+    { "item": "mango", "quantity": 2},
+    { "item": "brocoli", "quantity": 3},
+    { "item": "chillipowder", "quantity": 3},
+    { "item": "onions", "quantity": -2},
+    { "item": "ketchup", "quantity": 1}
+];
+
+/**
+ * Order should return the list of grocery items and counts that can be passed to supplier
+ * @return {Array.<Object>} Array of objects containing the items and quantities
+ */
+function order() {
+  
+  let result = [],
+      currentInventoryMap = {};
+  
+  currentInventory.map((item)=>{
+    currentInventoryMap[item.item] = item.quantity;
+  });
+
+  demandInventory.map((itemObj)=>{
+    let quantity = (currentInventoryMap[itemObj.item] && itemObj.quantity - currentInventoryMap[itemObj.item]) || itemObj.quantity;
+    
+    if(quantity > 0){
+      result.push({
+        item: itemObj.item,
+        quantity: quantity
+      });
+    }
+  });
+  return result;
+}
+
+order();
+
+// how to write tests
+mockResult = {
+  'itemName': 123123,
+  'oranges' : 123123
+};
+
+let result = order(mockMend, mockCurrent);
+expect(result).to.be.deepEqual(mockResult);
+
+result.forEach((itemObj)=>{
+  expect(itemObject.quantity).to.be(mockResult[itemObject.item]);
+  
+});
+
+// in HTML
+body
+  h1 item list
+  div#item-list
+  div  *ngFor 
+    p {{item-list.item}}: 
+    p {{item-list.quantity}}
+    button.order ngClass = inventory-list.item.quantity - order.item.quantity > 0? 'onSale': 'soldOut';
+
+item-list.soldOut
 
 
 
 
-
+// second round apple
